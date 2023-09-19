@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProjetController extends AbstractController
 {
-    #[Route('/projet', name: 'app_projet')]
+    #[Route('/projet/{nom}', name: 'app_projet')]
     public function index(): Response
     {
         $nom = "ilyes";
@@ -34,6 +34,14 @@ class ProjetController extends AbstractController
             "name" => $name,
             "description" => $description,
             "projects" => $projects,
+        ]);
+    }
+    #[Route('/details/{name}/{description}', name:"app_details")]
+    public function getDetails($name, $description): Response{
+        
+        return $this->render('projet/details.html.twig', [
+            "name" => $name,
+            "description" => $description,
         ]);
     }
 }

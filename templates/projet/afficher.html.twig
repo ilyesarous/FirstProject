@@ -1,12 +1,15 @@
-<h1>
-    Hello {{ name }}, {{ description }}
-</h1>
+    <h1>
+        Hello {{ name }}, {{ description }}
+    </h1>
+
+    <a href="{{path('app_projet', {nom: name})}}"> vers index</a>
 
     {% for p in projects %}
         <table>
             <tr>
             <td> {{ p.name }}</td>              
             <td> {{ p.description }} </td>
+            <td> <a href="{{path('app_details', {name: name, description: description})}}">details</a> </td>
             </tr>
         </table>
     {% endfor %}
