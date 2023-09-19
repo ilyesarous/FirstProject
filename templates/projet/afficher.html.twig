@@ -1,0 +1,13 @@
+<h1>
+    Hello {{ name }}, {{ description }}
+</h1>
+
+    {% for p in projects %}
+        <table>
+            <tr>
+            <td> {{ p.name }}</td>              
+            <td> {{ p.description }} </td>
+            </tr>
+        </table>
+    {% endfor %}
+    
