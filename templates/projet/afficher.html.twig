@@ -9,7 +9,7 @@
             <tr>
             <td> {{ p.name }}</td>              
             <td> {{ p.description }} </td>
-            <td> <a href="{{path('app_details', {name: name, description: description})}}">details</a> </td>
+            <td> <a href="{{path('app_details', {name: p.name, description: p.description})}}">details</a> </td>
             </tr>
         </table>
     {% endfor %}
