@@ -1,0 +1,39 @@
+<table>
+    {% for a in authors %}
+        <tr>
+            <td>
+                {{ a.username }}
+            </td>
+            <td>
+                {{ a.email }}
+            </td>
+            <td>
+                {{ a.nbBooks }}
+            </td>
+            <td>
+                <a href="{{ path('app_getOne', {id: a.id}) }}">
+                    details
+                                    
+                </a>
+            </td>
+            <td>
+                <a href="{{ path('author_updateDB', {id: a.id}) }}">
+                    update
+                                    
+                </a>
+            </td>
+            <td>
+                <a href="{{ path('author_delete', {id: a.id}) }}">
+                    delete
+                                    
+                </a>
+            </td>
+            <td>
+                <a href="{{ path('book_addDB', {id: a.id}) }}">
+                    ADD BOOK
+                                    
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,31 @@
+<table border=1>    
+    {% if tableSize != 0 %}
+    {% set nbBooks = 0 %}
+        {% for auth in authors %}
+            <tr>
+                <td>
+                    {{ auth.id }}
+                </td>
+                <td>
+                    <img width="100px" height="100px" src={{ auth.picture }} alt="image" />
+                </td>
+                <td>
+                    {{ auth.username | upper }}
+                </td>
+                <td>
+                    {{ auth.email }}
+                </td>
+                <td>
+                    {{ auth.nb_books }}
+                </td>
+            <td> <a href="{{path('app_show', {id: auth.id})}}">details</a> </td>
+            </tr>
+            {% set nbBooks = nbBooks + auth.nb_books %}
+            
+        {% endfor %}
+        {% else %}
+    <h1>your table is empty</h1>
+    {% endif %}
+</table>
+<h2> there are {{tableSize}} authors </h2>
+<h2> there are {{nbBooks}} books </h2>

@@ -1,0 +1,34 @@
+<table border=1>
+    {% for a in listAuth %}
+        <tr>
+            <td>
+                {{ a.username }}
+            </td>
+            <td>
+                {{ a.email }}
+            </td>
+            <td>
+                {{ a.nbBooks }}
+            </td>
+           
+            <td>
+                <a href="{{ path('author_updateDB', {id: a.id}) }}">
+                    edit
+                                    
+                </a>
+            </td>
+            <td>
+                <a href="{{ path('author_delete', {id: a.id}) }}">
+                    delete
+                                    
+                </a>
+            </td>
+            <td>
+                <a href="{{ path('book_addDB', {id: a.id}) }}">
+                    ADD BOOK
+                                    
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

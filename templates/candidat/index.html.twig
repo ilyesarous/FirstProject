@@ -1,0 +1,23 @@
+<table border="1">
+    {% for c in candidats %}
+        <tr>
+            <td>
+                {{ c.id }}
+            </td>
+            <td>
+                {{ c.firstName }}
+            </td>
+            <td>
+                {{ c.lastName }}
+            </td>
+            <td>
+                {{ c.speciality }}
+            </td>
+            <td>
+                <a href="{{ path('app_deleteCandidat', { id: c.id }) }}">
+                    delete
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

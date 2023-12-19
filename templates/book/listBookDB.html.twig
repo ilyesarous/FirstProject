@@ -1,0 +1,51 @@
+{{ form(form) }}
+{# {{ form_start(form) }}
+<b>
+    {{ form_label("ref") }}
+</b>
+<b>
+    {{ form_widget(form.ref) }}
+</b>
+<b>
+    {{ form_widget(form.search) }}
+</b>
+{{ form_end(form) }} #}
+<br>
+    <table border="1">
+        {% for a in books %}
+            <tr>
+                <td>
+                    {{ a.ref }}
+                </td>
+                <td>
+                    {{ a.author.getUsername() }}
+                </td>
+                <td>
+                    {{ a.title }}
+                </td>
+                <td>
+                    {{ a.publicationDate | date }}
+                </td>
+                <td>
+                    {{ a.published }}
+                </td>
+                <td>
+                    {{ a.category }}
+                </td>
+                <td>
+                    <a href="{{ path('book_deleteDB', { id: a.ref }) }}">
+                        delete
+                                        
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ path('book_updateBook', { id: a.ref }) }}">
+                        update
+                                        
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    {# <tr> nb thriller book: {{ nb }}</tr> #}
+    </table>
+    

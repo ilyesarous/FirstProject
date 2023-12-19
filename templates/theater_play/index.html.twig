@@ -1,0 +1,22 @@
+{% for t in theaters %}
+            <tr>
+                <td>
+                    {{ t.id }}
+                </td>
+                {# <td>
+                    <img width="100px" height="100px" src={{ t.picture }} alt="image" />
+                </td> #}
+                <td>
+                    {{ t.title | upper }}
+                </td>
+                <td>
+                    {{ t.genre }}
+                </td>
+                <td>
+                    {{ t.duration }}
+                </td>
+            {# <td> <a href="{{path('app_show', {id: auth.id})}}">details</a> </td> #}
+            </tr>
+            {# {% set nbBooks = nbBooks + auth.nb_books %} #}
+            
+        {% endfor %}

@@ -1,0 +1,20 @@
+<table border="1">
+    {% for c in entretiens %}
+        {% if c.state == 1 %}
+            <tr>
+                <td>
+                    {{ c.id }}
+                </td>
+                <td>
+                    {{ c.type }}
+                </td>
+                <td>
+                    {{ c.dateEnt | date }}
+                </td>
+                <td>
+                    {{ c.state }}
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>

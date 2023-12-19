@@ -1,0 +1,23 @@
+<table border=1>
+   {% for a in auth %}
+   {% if a.id == id %}
+   <tr>
+    <td>
+        {{ a.id }}
+    </td>
+    <td>
+        <img width="100px" height="100px" src={{ a.picture }} alt="image" />
+    </td>
+    <td>
+        {{ a.username | upper }}
+    </td>
+    <td>
+        {{ a.email }}
+    </td>
+    <td>
+        {{ a.nb_books }}
+    </td>
+</tr>
+{% endif %}
+{% endfor %}
+</table>
